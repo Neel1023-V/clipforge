@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ClipForge is a clean media utility for links you own or are authorized to use." />
+  <title>ClipForge — Media Utility</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#"><span class="brand-mark">▶</span> Clip<span>Forge</span></a>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="nav-btn" href="#downloader">Try ClipForge</a>
+  </header>
+
+  <main>
+    <section class="hero" id="downloader">
+      <div class="glow glow-one"></div><div class="glow glow-two"></div>
+      <div class="eyebrow">FAST • SIMPLE • NO SIGN-UP</div>
+      <h1>Your links.<br><span>Your media workflow.</span></h1>
+      <p class="hero-copy">Paste a public media URL you own or have permission to use. ClipForge checks the link and prepares available processing options.</p>
+
+      <div class="tool-card">
+        <div class="input-row">
+          <input id="mediaUrl" type="url" placeholder="Paste your media link here..." autocomplete="off" />
+          <button id="analyzeBtn"><span>Analyze</span> <b>→</b></button>
+        </div>
+        <div class="tool-meta">
+          <span>🔒 No login required</span><span>⚡ Fast link validation</span><span>✓ Desktop & mobile</span>
+        </div>
+      </div>
+      <p class="notice">Use only media you own, public-domain material, or content you are authorized to download or process.</p>
+
+      <section class="result hidden" id="result">
+        <div class="result-top">
+          <div class="thumb" id="thumb">▶</div>
+          <div><p class="source" id="source"></p><h2 id="resultTitle"></h2><p id="duration"></p></div>
+        </div>
+        <div id="formatList" class="formats"></div>
+      </section>
+      <div id="error" class="error hidden"></div>
+    </section>
+
+    <section class="trust">
+      <div><strong>01</strong><span>Paste a link</span></div>
+      <div><strong>02</strong><span>Review options</span></div>
+      <div><strong>03</strong><span>Process authorized media</span></div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="section-head"><p class="eyebrow">BUILT FOR SIMPLICITY</p><h2>Everything you need.<br><span>Nothing you don't.</span></h2></div>
+      <div class="grid">
+        <article><div class="icon">↗</div><h3>Clean workflow</h3><p>One focused interface for validating a link and reviewing available processing choices.</p></article>
+        <article><div class="icon">◈</div><h3>Format choices</h3><p>Designed to present video and audio options supplied by an authorized media source.</p></article>
+        <article><div class="icon">▣</div><h3>Any device</h3><p>A responsive layout that works smoothly on phones, tablets, laptops, and desktops.</p></article>
+      </div>
+    </section>
+
+    <section class="section how" id="how">
+      <div class="section-head"><p class="eyebrow">HOW IT WORKS</p><h2>Three simple steps.</h2></div>
+      <div class="steps">
+        <article><span>01</span><h3>Copy your link</h3><p>Use a public URL for media you own or are authorized to process.</p></article>
+        <article><span>02</span><h3>Analyze it</h3><p>Paste the URL into ClipForge and let the service validate the source.</p></article>
+        <article><span>03</span><h3>Choose an option</h3><p>Select an available workflow from your configured authorized provider.</p></article>
+      </div>
+    </section>
+
+    <section class="faq section" id="faq">
+      <div class="section-head"><p class="eyebrow">FAQ</p><h2>Questions, answered.</h2></div>
+      <details open><summary>What does this starter website do?</summary><p>It provides the complete UI and backend API structure, validates public URLs, and displays processing options. Connect an authorized media provider to enable production processing.</p></details>
+      <details><summary>Can I deploy this on Render?</summary><p>Yes. Upload this project to GitHub and create a Render Web Service using Node.js. The included start command is <code>npm start</code>.</p></details>
+      <details><summary>Does it work on mobile?</summary><p>Yes. The interface is fully responsive.</p></details>
+      <details><summary>Can I change the ClipForge branding?</summary><p>Yes. Edit the text, colors, sections, and logo directly in the files.</p></details>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#"><span class="brand-mark">▶</span> Clip<span>Forge</span></a><p>© 2026 ClipForge. Built for authorized media workflows.</p></footer>
+  <script src="/script.js"></script>
+</body>
+</html>

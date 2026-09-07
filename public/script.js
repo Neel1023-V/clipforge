@@ -31,7 +31,7 @@ async function analyze() {
     document.getElementById("formatList").innerHTML = data.item.formats.map(f => `
       <div class="format">
         <div><strong>${f.label} · ${f.quality}</strong><br><small>${f.size}</small></div>
-        <button onclick="showAuthorizedNotice('${f.id || f.label}')">Select →</button>
+        <button onclick="processFormat('${f.id || f.label}')">Select →</button>
       </div>`).join("");
 
     result.classList.remove("hidden");
@@ -43,10 +43,34 @@ async function analyze() {
     button.querySelector("span").textContent = "Analyze";
   }
 }
+
+async function processFormat(formatId) {
+  const url = input.value.trim();
+  if (!url) return showError("Paste a public media URL first.");
+
+  error.classList.add("hidden");
+  button.disabled = true;
+  button.querySelector("span").textContent = "Processing...";
+
+  try {
+    const response = await fetch("/api/process", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ url, format: formatId })
+    });
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.error || "Processing failed.");
+
+    alert("Processing started successfully!");
+  } catch (err) {
+    showError(err.message);
+  } finally {
+    button.disabled = false;
+    button.querySelector("span").textContent = "Analyze";
+  }
+}
+
 function showError(message) {
   error.textContent = message;
   error.classList.remove("hidden");
 }
-window.showAuthorizedNotice = (formatId) => {
-  alert("Selected format: " + formatId + ". Processing workflow can now be implemented here.");
-};

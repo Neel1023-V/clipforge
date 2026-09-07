@@ -31,7 +31,7 @@ async function analyze() {
     document.getElementById("formatList").innerHTML = data.item.formats.map(f => `
       <div class="format">
         <div><strong>${f.label} · ${f.quality}</strong><br><small>${f.size}</small></div>
-        <button onclick="showAuthorizedNotice()">Select →</button>
+        <button onclick="showAuthorizedNotice('${f.id || f.label}')">Select →</button>
       </div>`).join("");
 
     result.classList.remove("hidden");
@@ -47,6 +47,6 @@ function showError(message) {
   error.textContent = message;
   error.classList.remove("hidden");
 }
-window.showAuthorizedNotice = () => {
-  // Production processing alert removed successfully
+window.showAuthorizedNotice = (formatId) => {
+  alert("Selected format: " + formatId + ". Processing workflow can now be implemented here.");
 };

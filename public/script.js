@@ -47,4 +47,6 @@ function showError(message) {
   error.textContent = message;
   error.classList.remove("hidden");
 }
-window.showAuthorizedNotice = () => alert("Connect this ClipForge deployment to an authorized media provider before enabling production processing.");
+window.showAuthorizedNotice = () => {
+  // Production processing alert removed successfully
+};
